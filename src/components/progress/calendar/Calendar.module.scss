@@ -1,0 +1,53 @@
+@use '../../../assets/styles/variables.scss' as vars;
+
+
+/* Calendar.module.scss */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 40px); 
+  grid-template-rows: auto repeat(6, 40px);
+  grid-gap: 4px; 
+  margin-top: 10px;
+  position: absolute; 
+  top: 110px;     
+  right: 20px;    
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+ background: rgba(29, 29, 34, 0.65); // основной цвет, просто светлее
+ border: 1px solid rgba(255, 255, 255, 0.05); // минимально заметный контур
+
+ border-radius: 8px;
+ padding: 10px;
+
+box-shadow:
+  inset 0 0 12px rgba(255, 255, 255, 0.04),
+  0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.calendarTitle {
+  font-size: 18px;
+  color: vars.$white;
+  margin-bottom: 15px;
+  text-align: center;
+  grid-column: 1 / span 7;
+  z-index: 10;
+}
+
+.day {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  color: vars.$grey-light;
+  background-color: vars.$white;
+  cursor: pointer;
+}
+
+.today {
+  background-color: vars.$grey-light;
+  color: vars.$white; // выделение текущего дня
+  font-weight: bold;
+}
