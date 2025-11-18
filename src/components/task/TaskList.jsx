@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./TaskList.module.scss";
-import HabitCard from "../habitcard/HabitCard";
+import HabitCard from "../ui/habit/habitcard/HabitCard";
 import TaskCard from "./TaskCard";
 
 export default function TaskList({ tasks = [], onToggleTask }) {

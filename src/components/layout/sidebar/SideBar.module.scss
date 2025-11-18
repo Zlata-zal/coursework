@@ -1,4 +1,4 @@
-@use '../../assets/styles/variables.scss' as vars;
+@use '../../../assets/styles/variables.scss' as vars;
 
 
 .sidebar {
@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 5px 5px 12px vars.$white-yellow;
+  box-shadow: 10px 0 15px -5px vars.$white-yellow;
   height: 100vh;
 }
 
@@ -25,7 +25,7 @@
   backdrop-filter: blur(20px);
  -webkit-backdrop-filter: blur(20px);
 
- background: rgba(29, 29, 34, 0.65); // основной цвет, просто светлее
+ background: vars.$white-blue; // основной цвет, просто светлее
  border: 1px solid rgba(255, 255, 255, 0.05); // минимально заметный контур
 
  border-radius: 8px;

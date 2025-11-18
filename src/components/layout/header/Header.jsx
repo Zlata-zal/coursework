@@ -2,6 +2,7 @@ import React from "react";
 import { SlSettings } from "react-icons/sl";
 import styles from "./Header.module.scss";
 
+
 function Header() {
   return (
     <header className={styles.header}>

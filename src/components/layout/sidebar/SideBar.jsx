@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./SideBar.module.scss";
 import { FiUser } from "react-icons/fi";
-import TaskList from "../task/TaskList"; // подключаем старый TaskList
-import { Task } from "../task/Task";
+import TaskList from "../../task/TaskList"; // подключаем старый TaskList
+import { Task } from "../../task/Task";
 
 function SideBar() {
   const [tasks, setTasks] = React.useState([

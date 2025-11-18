@@ -15,7 +15,7 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 
- background: rgba(29, 29, 34, 0.65); // основной цвет, просто светлее
+ background: vars.$white-blue; // основной цвет, просто светлее
  border: 1px solid rgba(255, 255, 255, 0.05); // минимально заметный контур
 
  border-radius: 8px;
@@ -47,7 +47,7 @@ box-shadow:
 }
 
 .today {
-  background-color: vars.$grey-light;
-  color: vars.$white; // выделение текущего дня
+  color: vars.$grey-light;
+  box-shadow: 0 0 10px vars.$white-yellow, 0 0 20px vars.$white-yellow; // выделение текущего дня
   font-weight: bold;
 }

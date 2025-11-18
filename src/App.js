@@ -1,36 +1,33 @@
 import React, { useState } from "react";
-import { Habit } from "../src/models/Habit.js";
-import HabitCard from "./components/habitcard/HabitCard";
-import Header from "./components/header/Header"; 
-import SideBar from "./components/sidebar/SideBar.jsx";
-import TaskList from "./components/task/TaskList.jsx";
-import Calendar from "./components/progress/calendar/Calendar.jsx";
-
+import Header from "./components/layout/header/Header";
+import SideBar from "./components/layout/sidebar/SideBar.jsx";
+import Home from "./components/page/home/Home";
+import {Habit} from "./components/ui/habit/Habit";
+import Tasks from "./components/task/TaskList";
 
 function App() {
-  const [habits, setHabits] = useState([
-    new Habit("Чтение", 7),
-    new Habit("Зарядка", 10),
-  ]);
+  const [currentPage, setCurrentPage] = useState('home');
 
-  const handleMarkDay = (habitIndex, dayIndex) => {
-    const updatedHabits = [...habits];
-    updatedHabits[habitIndex].markDay(dayIndex);
-    setHabits([...updatedHabits]);
+  const renderPage = () => {
+    switch(currentPage) {
+      case 'home':
+        return <Home />;
+      case 'habits':
+        return <Habit />;
+      case 'tasks':
+        return <Tasks />;
+      default:
+        return <Home />;
+    }
   };
 
   return (
     <div className="app">
       <Header />
       <div className="main-content">
-        <SideBar />
-        <Calendar/>
+        <SideBar onPageChange={setCurrentPage} currentPage={currentPage} />
         <div className="content">
-          <h1>Мои привычки</h1>
-          <TaskList
-            habits={habits}
-            onMark={handleMarkDay}
-          />
+          {renderPage()}
         </div>
       </div>
     </div>
